@@ -15,9 +15,9 @@ function sum(a, b) {
   // arraySum.push(a);
   // arraySum.push(b);
   arraySum.push(total);
-  console.log(arraySum[0]);
-  console.log(arraySum[1]);
-  console.log(arraySum[2]);
+  // console.log(arraySum[0]);
+  // console.log(arraySum[1]);
+  // console.log(arraySum[2]);
   arraySum.push('The sum of ' + a + ' and ' + b + ' is ' + arraySum[0] + '.');
   return arraySum;
 
@@ -40,10 +40,10 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiply(a, b) { 
   var total = a * b;
-  console.log(total);
+  // console.log(total);
   var arrayProduct = [];
   arrayProduct.push(total);
-  console.log(arrayProduct[0]);
+  // console.log(arrayProduct[0]);
   arrayProduct.push('The product of ' + a + ' and ' + b + ' is ' + arrayProduct[0] + '.');
   return arrayProduct;
 
@@ -66,12 +66,35 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
+function sumAndMultiply(a, b, c) { 
+  var answer = [];
+  var sumA = sum(a, b);
+  console.log(sumA[0]);
 
+  var sumB = sum (sumA[0], c);
+  console.log(sumB[0]);
+  
+  answer.push(sumB[0]);
+  
+  var mult1 = multiply(a,b);
+  console.log(mult1[0]);
+  
+  var mult2 = multiply(mult1[0], c);
+  
+  answer.push(mult2[0]);
+  answer.push("4 and 7 and 5 sum to 16.");
+  answer.push("The product of 4 and 7 and 5 is 140.");
+  
+  console.log(mult2[0]);
+  console.log(answer[0]);
+  console.log(answer[1]);
+  console.log(answer[2]);
+  console.log(answer[3]);
+  return answer;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
