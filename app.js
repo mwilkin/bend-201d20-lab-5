@@ -12,12 +12,8 @@ function sum(a, b) {
   var total = a + b;
   console.log(total);
   var arraySum = [];
-  // arraySum.push(a);
-  // arraySum.push(b);
   arraySum.push(total);
   console.log(arraySum[0]);
-  console.log(arraySum[1]);
-  console.log(arraySum[2]);
   arraySum.push('The sum of ' + a + ' and ' + b + ' is ' + arraySum[0] + '.');
   return arraySum;
 
