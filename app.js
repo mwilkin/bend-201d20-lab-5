@@ -10,7 +10,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sum(a, b) {
   var total = a + b;
-  console.log(total);
+  // console.log(total);
   var arraySum = [];
   // arraySum.push(a);
   // arraySum.push(b);
@@ -109,10 +109,14 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
-var testArray = [2, 3, 4]; //eslint-disable-line
+var testArray = [2, 3, 4]; 
 
-function sumArray(sumArr) { //eslint-disable-line
-
+function sumArray(sumArr) {
+  var totalArray = [];
+  testArray.forEach(function(element){
+    totalArray = sum(testArray[0], testArray[1] );
+  });
+  console.log(testArray);
 }
 
 // Here is the test for sumArray(); uncomment it to run it
