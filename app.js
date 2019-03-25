@@ -69,27 +69,22 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) { 
   var answer = [];
   var sumA = sum(a, b);
-  console.log(sumA[0]);
+  // console.log(sumA[0]);
 
   var sumB = sum (sumA[0], c);
-  console.log(sumB[0]);
+  // console.log(sumB[0]);
   
   answer.push(sumB[0]);
   
   var mult1 = multiply(a,b);
-  console.log(mult1[0]);
+  // console.log(mult1[0]);
   
   var mult2 = multiply(mult1[0], c);
+  // console.log(mult2[0]);
   
   answer.push(mult2[0]);
-  answer.push("4 and 7 and 5 sum to 16.");
-  answer.push("The product of 4 and 7 and 5 is 140.");
-  
-  console.log(mult2[0]);
-  console.log(answer[0]);
-  console.log(answer[1]);
-  console.log(answer[2]);
-  console.log(answer[3]);
+  answer.push(a + ' and ' + b + ' and ' + c + ' sum to ' + sumB[0] + '.' );
+  answer.push('The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + mult2[0] + '.');
   return answer;
 }
 
@@ -110,18 +105,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 var testArray = [2, 3, 4]; 
+var totalArray = [];
 
-function sumArray(sumArr) {
-  var totalArray = [];
-  testArray.forEach(function(element){
-    totalArray = sum(testArray[0], testArray[1] );
-  });
-  console.log(testArray);
+function sumArray(arrayToSum) {
+  totalArray.push(sum(sum(arrayToSum[0], arrayToSum[1])[0], arrayToSum[2])[0]);
+  totalArray.push(arrayToSum[0] + ',' + arrayToSum[1] + ',' + arrayToSum[2] + ' was passed in as an array of numbers, and ' + totalArray[0] + ' is their sum.');
+  // console.log(sumA);
+  console.log(totalArray[0]);
+  return totalArray;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
